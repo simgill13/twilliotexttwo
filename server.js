@@ -8,6 +8,8 @@ const path = require('path');
 const {bar,order} = require('./model');
 const {PORT, DATABASE_URL} = require('./config');
 const {ACCOUNT_SID, AUTH_TOKEN} = require('./secret');
+var accountSid = ACCOUNT_SID;
+var authToken = AUTH_TOKEN;
 
 
 app.use(function(req, res, next) {
@@ -21,7 +23,6 @@ app.use(function(req, res, next) {
 
 
 
-
 app.post('/textmsg', (req, res) => {
  console.log('=================HIT==============')
  console.log(req.body.text)
@@ -29,12 +30,6 @@ app.post('/textmsg', (req, res) => {
 
  var string = req.body.text
 
-
-
-
-
-var accountSid = ACCOUNT_SID;
-var authToken = AUTH_TOKEN; 
  
 //require the Twilio module and create a REST client 
 var client = require('twilio')(accountSid, authToken); 
