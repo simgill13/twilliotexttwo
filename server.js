@@ -27,11 +27,11 @@ app.post('/textmsg', (req, res) => {
  console.log(req.body.text)
  var string = req.body.text
 
-var accountSid = 'AC930c602a19415f6adcfd5ea6b65e0aa1'; 
-var authToken = 'b746baf812b466659e94d45e638836f3'; 
+var dontlookhere = 'AC930c602a19415f6adcfd5ea6b65e0aa1'; 
+var randomnumber = 'b746baf812b466659e94d45e638836f3'; 
  
 //require the Twilio module and create a REST client 
-var client = require('twilio')(accountSid, authToken); 
+var client = require('twilio')(dontlookhere, randomnumber); 
  
   client.messages.create({ 
       to: "+14086130163", 
