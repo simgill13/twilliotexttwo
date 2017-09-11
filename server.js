@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 const path = require('path');
 const {bar,order} = require('./model');
 const {PORT, DATABASE_URL} = require('./config');
-
+const {ACCOUNT_SID, AUTH_TOKEN} = require('./secret');
 
 
 app.use(function(req, res, next) {
@@ -33,8 +33,8 @@ app.post('/textmsg', (req, res) => {
 
 
 
-var accountSid = 'AC930c602a19415f6adcfd5ea6b65e0aa1'; 
-var authToken = 'b746baf812b466659e94d45e638836f3'; 
+var accountSid = ACCOUNT_SID;
+var authToken = AUTH_TOKEN; 
  
 //require the Twilio module and create a REST client 
 var client = require('twilio')(accountSid, authToken); 
