@@ -6,8 +6,8 @@ const app = express();
 app.use(bodyParser.json());
 const path = require('path');
 const {bar,order} = require('./model');
-const {PORT, DATABASE_URL} = require('./config');
-const {ACCOUNT_SID, AUTH_TOKEN} = require('./secret');
+const {PORT, DATABASE_URL,ACCOUNT_SID,AUTH_TOKEN} = require('./config');
+// const {ACCOUNT_SID, AUTH_TOKEN} = require('./secret');
 var accountSid = ACCOUNT_SID;
 var authToken = AUTH_TOKEN;
 
@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 });
 
 
-
+console.log('===========================', authToken)
 
 
 app.post('/textmsg', (req, res) => {
